@@ -1,5 +1,5 @@
 
-# Hala FTTH - ISP CRM & Help Desk System
+# ISP CRM & Help Desk System
 
 This is a comprehensive, full-stack web application designed to serve as a Customer Relationship Management (CRM) and Help Desk system for an Internet Service Provider (ISP). It provides a multi-faceted platform for managing subscribers, tickets, tasks, employees, and sales leads, all governed by a robust role-based access control system.
 
@@ -150,4 +150,5 @@ The login page (`/auth/login`) features a dropdown menu that lets you sign in as
 This application is ready to be deployed on platforms that support Next.js, such as [Vercel](https://vercel.com/).
 
 When deploying, ensure you have set the required environment variables (`NEXTAUTH_SECRET`, `MONGODB_URI`, `API_KEY`) in your deployment provider's settings.
+
 
