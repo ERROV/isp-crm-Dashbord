@@ -125,7 +125,7 @@ const RolesPage: React.FC<RolesPageProps> = ({ roles, setRoles }) => {
                 <td className="px-6 py-4 whitespace-nowrap text-sm text-slate-500 dark:text-slate-400">{role.permissions.length}</td>
                 <td className={`px-6 py-4 whitespace-nowrap text-sm font-medium ${language === 'ar' ? 'text-left' : 'text-right'} space-x-4 space-x-reverse`}>
                   <button onClick={() => handleEdit(role)} className="text-blue-600 hover:text-blue-900 dark:text-blue-400 dark:hover:text-blue-300">{t('common.edit')}</button>
-                  <button onClick={() => handleDelete(role.id)} className="text-red-600 hover:text-red-900 disabled:text-slate-400 disabled:cursor-not-allowed dark:text-red-500 dark:hover:text-red-400" disabled={role.id <= 4}>{t('common.delete')}</button>
+                  <button onClick={() => role.id !== undefined && handleDelete(role.id)} className="text-red-600 hover:text-red-900 disabled:text-slate-400 disabled:cursor-not-allowed dark:text-red-500 dark:hover:text-red-400" disabled={role.id === undefined || role.id <= 4}>{t('common.delete')}</button>
                 </td>
               </tr>
             ))}

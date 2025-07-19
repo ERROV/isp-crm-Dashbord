@@ -53,7 +53,7 @@ export const summarizeTicket = async (ticket: Ticket, language: 'en' | 'ar'): Pr
         temperature: 0.5,
       }
     });
-    return response.text;
+    return response.text ?? translations[language].ticketsPage.aiSummaryError;
   } catch (error) {
     console.error("Error summarizing ticket with Gemini API:", error);
     return translations[language].ticketsPage.aiSummaryError;

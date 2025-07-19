@@ -51,7 +51,7 @@ export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ chil
   const t = useCallback(
     (key: TranslationKey, options?: Record<string, string | number>): string => {
       const langTranslations = translations[language];
-      let translation = key.split('.').reduce((obj, k) => obj && (obj as any)[k], langTranslations) as string;
+      let translation = key.split('.').reduce((obj, k) => obj && (obj as any)[k], langTranslations) as unknown as string;
 
       if (!translation) {
         console.warn(`Translation key not found: ${key}`);

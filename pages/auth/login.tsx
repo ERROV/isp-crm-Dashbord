@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { useRouter } from 'next/router';
 import { signIn } from 'next-auth/react';
@@ -9,14 +8,18 @@ import type { TranslationKey } from '../../translations';
 const LoginPage = () => {
   const { t } = useLanguage();
   const router = useRouter();
-  const [selectedUserId, setSelectedUserId] = useState<string>(initialUsers[0]?.id.toString() || '');
+  const [selectedUserId, setSelectedUserId] = useState<string>(
+    initialUsers && initialUsers.length > 0 && initialUsers[0]?.id !== undefined
+      ? initialUsers[0].id.toString()
+      : ''
+  );
   const [error, setError] = useState<string | null>(null);
 
   const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();
     setError(null);
     
-    const userToLogin = initialUsers.find(u => u.id.toString() === selectedUserId);
+    const userToLogin = initialUsers.find(u => u.id !== undefined && u.id.toString() === selectedUserId);
     if (!userToLogin) {
         setError("Please select a valid user.");
         return;
@@ -36,8 +39,9 @@ const LoginPage = () => {
   };
   
   const getRoleNameForUser = (user: typeof initialUsers[0]) => {
-     const role = initialRoles.find(r => r.id === user.roleId);
-     return role ? t(role.name as TranslationKey) : t('roles.unknown');
+    if (!user || user.roleId === undefined) return t('roles.unknown');
+    const role = initialRoles.find(r => r.id === user.roleId);
+    return role ? t(role.name as TranslationKey) : t('roles.unknown');
   };
 
   return (

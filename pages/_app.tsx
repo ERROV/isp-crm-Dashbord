@@ -19,7 +19,9 @@ import {
     initialSurveys, initialMessages
 } from '../lib/mockData';
 import type { Notification } from '../types';
-import '../styles/globals.css';
+// import global styles; ensure the file exists at the specified path
+/* import '../styles/globals.css'; */
+// If the file does not exist, create 'styles/globals.css' or update the path to your actual global CSS file.
 
 const AppShell: React.FC<{
   children: React.ReactNode;
