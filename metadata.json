@@ -1,0 +1,14 @@
+
+{
+  "name": "Hala FTTH - ISP CRM",
+  "description": "A comprehensive help desk and ticket management system for ISPs, including user and task management, built on Next.js with NextAuth.js and MongoDB.",
+  "requestFramePermissions": [],
+  "allowedOrigins": [
+    "https://esm.sh",
+    "https://cdn.tailwindcss.com",
+    "https://i.pravatar.cc",
+    "https://picsum.photos",
+    "https://unpkg.com"
+  ],
+  "prompt": ""
+}

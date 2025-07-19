@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ISP Help Desk CRM</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      /* Simple scrollbar styling for better aesthetics */
+      ::-webkit-scrollbar {
+        width: 8px;
+        height: 8px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #f1f1f1;
+        background: #f0f2f5;
+      }
+      .dark ::-webkit-scrollbar-track {
+        background: #1e293b;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #a8b0b9;
+        border-radius: 4px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: #88929c;
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react-router-dom": "https://esm.sh/react-router-dom@^7.7.0",
+    "@google/genai": "https://esm.sh/@google/genai@^1.10.0",
+    "react-dom/": "https://esm.sh/react-dom@^19.1.0/",
+    "react/": "https://esm.sh/react@^19.1.0/",
+    "react": "https://esm.sh/react@^19.1.0",
+    "mongoose": "https://esm.sh/mongoose@^8.16.4",
+    "bcryptjs": "https://esm.sh/bcryptjs@^3.0.2",
+    "next/": "https://esm.sh/next@^15.4.2/",
+    "next-auth/": "https://esm.sh/next-auth@^4.24.11/",
+    "next": "https://esm.sh/next@^15.4.2",
+    "next-auth": "https://esm.sh/next-auth@^4.24.11"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body class="bg-slate-100 dark:bg-slate-900 transition-colors duration-300">
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+  </body>
+</html>
