@@ -1,9 +1,7 @@
 import React, { useState, useMemo } from 'react';
 import { useRouter } from 'next/router';
 import type { Subscriber, Reseller } from '../types';
-import { SubscriberStatus, Permission } from '../types';
-import Modal from '../components/common/Modal';
-import { useAuth } from '../contexts/AuthContext';
+import { SubscriberStatus } from '../types';
 import { useLanguage } from '../contexts/LanguageContext';
 import type { TranslationKey } from '../translations';
 
@@ -12,7 +10,7 @@ const SubscriberDetails: React.FC<{
     resellerName: string;
     onCreateTicket: (id: number) => void;
 }> = ({ subscriber, resellerName, onCreateTicket }) => {
-    const { t, locale, language } = useLanguage();
+    const { t, locale } = useLanguage();
     const currencyFormatter = new Intl.NumberFormat(locale, { style: 'currency', currency: 'IQD', minimumFractionDigits: 0 });
 
     const DetailItem: React.FC<{ labelKey: TranslationKey; value?: string | number | null; children?: React.ReactNode }> = ({ labelKey, value, children }) => (
@@ -81,14 +79,13 @@ interface SubscribersPageProps {
   resellers: Reseller[];
 }
 
-const SubscribersPage: React.FC<SubscribersPageProps> = ({ subscribers, setSubscribers, resellers }) => {
-    const { hasPermission } = useAuth();
-    const { t, language } = useLanguage();
+const SubscribersPage: React.FC<SubscribersPageProps> = ({ subscribers, resellers }) => {
+
+    const { t } = useLanguage();
     const router = useRouter();
     const [searchQuery, setSearchQuery] = useState('');
     const [selectedSubscriber, setSelectedSubscriber] = useState<Subscriber | null>(null);
 
-    const canManage = hasPermission(Permission.MANAGE_SUBSCRIBERS);
 
     const filteredSubscribers = useMemo(() => {
         if (!searchQuery) return [];

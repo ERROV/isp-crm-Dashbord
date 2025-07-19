@@ -30,7 +30,7 @@ const DashboardAppCard: React.FC<{
 const DashboardPage: React.FC<DashboardPageProps> = ({ tickets, tasks }) => {
     const router = useRouter();
     const { currentUser, hasPermission } = useAuth();
-    const { t, language } = useLanguage();
+    const { t } = useLanguage();
 
     const handleNavigation = (path: string | null) => {
         if (path) {

@@ -1,4 +1,4 @@
-import mongoose, { Schema, models, model } from 'mongoose';
+import  { Schema, models, model } from 'mongoose';
 import { Ticket as ITicket, TicketStatus, ProblemType } from '../types';
 
 const TicketSchema = new Schema<ITicket>({

@@ -1,4 +1,4 @@
-import mongoose, { Schema, models, model, Document } from 'mongoose';
+import  { Schema, models, model } from 'mongoose';
 import { hashPassword } from '../lib/passwords';
 import type { User as IUser } from '../types';
 

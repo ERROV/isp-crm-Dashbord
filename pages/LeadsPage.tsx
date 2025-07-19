@@ -1,4 +1,4 @@
-import React, { useState, useMemo } from 'react';
+import React, { useState } from 'react';
 import type { Lead, User } from '../types';
 import { LeadStatus, LeadType, Permission } from '../types';
 import Modal from '../components/common/Modal';

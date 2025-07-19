@@ -1,4 +1,4 @@
-import mongoose, { Schema, models, model, Document } from 'mongoose';
+import { Schema, models, model } from 'mongoose';
 import { Permission, Role as IRole } from '../types';
 
 const RoleSchema = new Schema<IRole>({
